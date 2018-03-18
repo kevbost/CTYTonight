@@ -10,4 +10,5 @@
 
 ###### parent
 
-`parent`
+From root: `yarn dev`
+

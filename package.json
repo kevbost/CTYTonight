@@ -5,7 +5,14 @@
   "repository": "git@github.com:kevbost/CTYTonight.git",
   "author": "Kevin Bost <kevbost@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "cd server && nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
   "devDependencies": {
-    "eslint": "^4.19.0"
+    "concurrently": "^3.5.1",
+    "eslint": "^4.19.0",
+    "eslint-plugin-react": "^7.7.0"
   }
 }

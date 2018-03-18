@@ -1,13 +1,24 @@
 # node
 node_modules/
 
-# DS_Store
-.DS_Store
+# key file
+keys
 
 # Logs
 logs
-*.log
+*.log*
 .tmp
 
-# key file
-keys
+# FROM CREATE-REACT-APP
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
