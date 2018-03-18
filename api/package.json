@@ -1,0 +1,14 @@
+{
+  "name": "ctytonight-api",
+  "version": "1.0.0",
+  "description": "Express api for CTYTonight",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Kevin Bost <kevbost@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.0"
+  }
+}

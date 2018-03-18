@@ -1,0 +1,14 @@
+{
+  "name": "ctytonight-scrubber",
+  "version": "1.0.0",
+  "description": "Event scrubber for CTYTonight written in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Kevin Bost <kevbost@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.0"
+  }
+}
