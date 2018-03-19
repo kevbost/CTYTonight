@@ -7,8 +7,10 @@
   "license": "MIT",
   "scripts": {
     "client": "cd client && yarn start",
-    "server": "cd server && nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "build:prod": "yarn build:server && yarn build:client",
+    "build:server": "babel server/**/*.js -d dist --copy-files",
+    "build:server:dev": "babel server/**/*.js --out-file dist/server/server.js --source-maps inline",
+    "build:client": "cd client && yarn build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
