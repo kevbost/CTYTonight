@@ -5,22 +5,31 @@
   "repository": "git@github.com:kevbost/CTYTonight.git",
   "author": "Kevin Bost <kevbost@gmail.com>",
   "license": "MIT",
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
   "scripts": {
     "client": "cd client && yarn start",
     "build:prod": "yarn build:server && yarn build:client",
-    "build:server": "babel server/**/*.js -d dist --copy-files",
-    "build:server:dev": "babel server/**/*.js --out-file dist/server/server.js --source-maps inline",
+    "build:scrubber": "babel scrubber/src -d scrubber/lib",
+    "build:scrubber:dev": "babel scrubber/src -d scrubber/lib --watch",
     "build:client": "cd client && yarn build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
     "concurrently": "^3.5.1",
     "eslint": "^4.19.0",
     "eslint-plugin-react": "^7.7.0",
     "express": "^4.16.3",
     "nodemon": "^1.17.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "fb": "^2.0.0",
+    "moment": "^2.21.0"
+  }
 }
