@@ -10,21 +10,35 @@ class Viewer extends React.Component {
     autoBind( this )
   }
 
-  componentDidMount() {
-    console.log(this.props)
+  componentWillMount() {
     this.props.send_request('avl', 'thisweek', true);
   }
 
   render() {
     const { responseData, isLoading } = this.props
 
-    const EventItem = ( event ) => {
-
+    const EventItem = ( props ) => {
+      const { event: { title, description, venue } } = props
       return (
         <div className="event">
-          <div className="title">{event.event.title}</div>
-          <div className="description">{event.event.description}</div>
+          <div className="venue">{venue.name}</div>
+          <div className="title">{title}</div>
+          <div className="description">{description}</div>
           <hr />
+        </div>
+      )
+    }
+
+    const DaySection = ( props ) => {
+      const { day, events } = props
+      return (
+        <div>
+          <h1>{day}</h1>
+          {events.map( event => {
+            return (
+              <EventItem key={event._id} event={event}/>
+            )
+          })}
         </div>
       )
     }
@@ -34,7 +48,9 @@ class Viewer extends React.Component {
         {Object.keys(responseData).length ?
           Object.keys(responseData).map( item => {
             return (
-              <p>{item}</p>
+              <div key={item}>
+                <DaySection day={item} events={responseData[item]} />
+              </div>
             )
           }) : <p>{'L O A D I N G'}</p>}
       </div>
