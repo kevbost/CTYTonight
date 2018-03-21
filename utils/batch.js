@@ -1,11 +1,9 @@
 import moment from 'moment'
 
 const today = moment().format( 'YYYY-MM-DD' )
-console.log( today )
-const today_plus_6 = moment().add( 6,
-  'days' )
+const today_plus_6 = moment()
+  .add( 6, 'days' )
   .format( 'YYYY-MM-DD' )
-console.log( today_plus_6 )
 
 const params = [
   'description',

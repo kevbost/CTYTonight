@@ -14,9 +14,9 @@
 import express from 'express'
 import { FB, FacebookApiException } from 'fb'
 import moment from 'moment'
-import getKey from '../scrubber/src/utils/getKey'
-import batch from '../scrubber/src/utils/batch'
-import { sorter } from './utils/sorter'
+import getKey from '../utils/getKey'
+import batch from '../utils/batch'
+import { sorter } from '../utils/sorter'
 
 const app = express()
 const port = process.env.PORT || 5000
@@ -25,6 +25,11 @@ const avl = batch( [
   'AVLMusicHall',
   'TheOrangePeelAsheville',
   'greyeagleasheville',
+  'AshevilleCivicCenter',
+  'HighlandBrewingCompany',
+  'NewMtnAVL',
+  'OneStopAVL',
+  'ambrosewestavl',
   'ashevilleodditorium'
 ] )
 
