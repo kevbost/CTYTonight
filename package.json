@@ -5,14 +5,10 @@
   "repository": "git@github.com:kevbost/CTYTonight.git",
   "author": "Kevin Bost <kevbost@gmail.com>",
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "env"
-    ]
-  },
   "scripts": {
     "client": "cd client && yarn start",
     "build:prod": "yarn build:server && yarn build:client",
+    "build:server": "babel server/server.js -d server/dist",
     "build:scrubber": "babel scrubber/src -d scrubber/lib",
     "build:scrubber:dev": "babel scrubber/src -d scrubber/lib --watch",
     "build:client": "cd client && yarn build"

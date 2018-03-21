@@ -3,6 +3,7 @@ import { captureStatus, getLoadingStatus } from 'redux-thunk-status'
 import { connect } from 'react-redux'
 import autoBind from 'react-autobind'
 import { submitRequest } from './actions'
+import axios from 'axios'
 
 class Viewer extends React.Component {
   constructor( props ){
@@ -12,6 +13,12 @@ class Viewer extends React.Component {
 
   componentWillMount() {
     this.props.send_request('avl', 'thisweek', true);
+  }
+
+  componentDidMount(){
+    axios.get('/api/hello').then(()=>{
+      console.log('something')
+    })
   }
 
   render() {

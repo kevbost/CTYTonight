@@ -1,9 +1,11 @@
 import moment from 'moment'
 
-const todaysDate = moment().format( 'YYYY-MM-DD' )
-const nextWeek = moment().add( 7,
+const today = moment().format( 'YYYY-MM-DD' )
+console.log( today )
+const today_plus_6 = moment().add( 6,
   'days' )
   .format( 'YYYY-MM-DD' )
+console.log( today_plus_6 )
 
 const params = [
   'description',
@@ -21,16 +23,16 @@ const params = [
   'timezone'
 ]
 
-const batchBuilder = ( inputArray ) => {
+const batch = ( inputArray ) => {
   const arr = []
   inputArray.forEach( ( inp ) => {
     arr.push({
       method: 'get',
-      relative_url: `/${inp}/events/?since=${todaysDate}&until=${nextWeek}&fields=${params.join( ',' )}`
+      relative_url: `/${inp}/events/?since=${today}&until=${today_plus_6}&time_filter=upcoming&fields=${params.join( ',' )}`
     })
   })
 
   return arr
 }
 
-export default batchBuilder
+export default batch

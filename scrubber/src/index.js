@@ -1,11 +1,16 @@
 import { FB, FacebookApiException } from 'fb'
 import getKey from './utils/getKey'
-import batchBuilder from './utils/batchBuilder'
+import batch from './utils/batch'
 
-const avl = batchBuilder( [
+const avl = batch( [
   'AVLMusicHall',
   'TheOrangePeelAsheville',
   'greyeagleasheville',
+  'AshevilleCivicCenter',
+  'HighlandBrewingCompany',
+  'NewMtnAVL',
+  'OneStopAVL',
+  'ambrosewestavl',
   'ashevilleodditorium'
 ] )
 
